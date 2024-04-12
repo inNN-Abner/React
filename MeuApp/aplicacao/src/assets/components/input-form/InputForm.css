@@ -1,0 +1,10 @@
+.input-form {
+    background-color: rgb(250, 213, 213);
+    color: rgb(255, 0, 13);
+    width: 500px;
+    height: 40px;
+    border-radius: 10px;
+    border: 10px;
+    padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
