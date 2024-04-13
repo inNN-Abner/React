@@ -1,5 +1,6 @@
-import ButtonForm from "../button-form"
-import InputForm from "../input-form"
+import { Link } from 'react-router-dom'
+import ButtonForm from '../button-form'
+import InputForm from '../input-form'
 
 function Form() {
     return (
@@ -13,6 +14,9 @@ function Form() {
     <InputForm type='text' placeholder='Seu telefone aqui' defaultValue='(19) 9 9788-5432'/>
     <hr/>
     <ButtonForm type='button' label='E N V I A R'/>  
+
+    <hr />
+    <Link to = '/'>Ir para o Menu</Link>
     </>
     )
 }
