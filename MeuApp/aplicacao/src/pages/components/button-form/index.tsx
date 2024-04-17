@@ -1,4 +1,5 @@
 import './ButtonForm.css'
+import Icone from '/src/images/send.png'
 
 interface ButtonProps {
     type: 'button' | 'submit' | 'reset'
@@ -7,7 +8,13 @@ interface ButtonProps {
 
 function ButtonForm({label, type}: ButtonProps) {
     return (
-        <button className='button-form' type={type}> {label}</button>
+        <div id = 'send-botton'>            
+            <button id = 'button-form' 
+                type = {type}> 
+                <img src = {Icone} alt='Ícone de Enviar' title = 'Ícone de enviar'></img>
+                {label}
+            </button>
+        </div>
     )
 }
 
