@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom'
+import Layout from '../../components/layout'
 
 function Tasks(){
     return (
-        <>
+    <div>
+    <Layout>
+
         <h1>Tarefas do projeto</h1>
         <hr />
         <ul>
@@ -11,8 +13,9 @@ function Tasks(){
             <li>Tarefa III</li>
         </ul>
         <hr />
-        <Link to = '/'>Ir para o Menu</Link>
-        </>
+
+    </Layout>
+    </div>
     )
 }
 

@@ -1,13 +1,15 @@
 import { ReactNode } from 'react';
+import { Link } from 'react-router-dom'
+
 import {
   Box,
   Flex,
   Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
   Menu,
+  Link as ChakraLink,
   MenuButton,
   MenuList,
   MenuItem,
@@ -20,16 +22,17 @@ import {
 import { GiHamburger } from "react-icons/gi";
 import { FaHamburger } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
+import { Tooltip } from '@chakra-ui/react';
 
 const Links = [
   { label: 'Sobre mim', href: './about' },
   { label: 'Formulário', href: './components' },
   { label: 'Apresentação', href: './presentation' },
-  { label: 'Tarefas do projeto', href: './tasks' }
+  { label: 'Tarefas do projeto', href: './tasks' },
 ];
 
 const NavLink = ({ children, href }: { children: ReactNode, href: string }) => (
-  <Link
+  <ChakraLink
     px={2}
     py={1}
     rounded={'md'}
@@ -39,7 +42,7 @@ const NavLink = ({ children, href }: { children: ReactNode, href: string }) => (
     }}
     href={href}>
     {children}
-  </Link>
+  </ChakraLink>
 );
 
 export default function Navbar() {
@@ -57,8 +60,12 @@ export default function Navbar() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={5} alignItems={'center'}>
-            <Box> 
+            <Box>
+              <Tooltip label="Menu" aria-label='A tooltip'>
+              <ChakraLink as={Link} to='.././'> 
               <FaReact size={30} />
+              </ChakraLink>
+              </Tooltip>
             </Box>
             <HStack
               as={'nav'}
