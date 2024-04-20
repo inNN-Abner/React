@@ -19,7 +19,7 @@ import {
 
 import { GiHamburger } from "react-icons/gi";
 import { FaHamburger } from "react-icons/fa";
-import { BsGithub } from "react-icons/bs";
+import { FaReact } from "react-icons/fa";
 
 const Links = ['Sobre mim', 'Formulário', 'Apresentação', 'Tarefas do projeto'];
 
@@ -53,8 +53,7 @@ export default function Simple() {
           />
           <HStack spacing={5} alignItems={'center'}>
             <Box> 
-              <a href="https://github.com/inNN-Abner/React" target="_blank" rel="noopener noreferrer"></a>
-              <BsGithub cursor={'pointer'} size={30} />
+              <FaReact size={30} />
             </Box>
             <HStack
               as={'nav'}

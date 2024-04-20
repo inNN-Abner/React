@@ -2,3 +2,6 @@ body, #root, .grid{
   min-height: 100vh;
 }
 
+#footer_alignment{
+  color: black;
+}
