@@ -1,5 +1,4 @@
-import './ButtonForm.css'
-import Icone from '/src/images/send.png'
+import { Button } from '@chakra-ui/react'
 
 interface ButtonProps {
     type: 'button' | 'submit' | 'reset'
@@ -8,13 +7,9 @@ interface ButtonProps {
 
 function ButtonForm({label, type}: ButtonProps) {
     return (
-        <div id = 'send-botton'>            
-            <button id = 'button-form' 
-                type = {type}> 
-                <img src = {Icone} alt='Ícone de Enviar' title = 'Ícone de enviar'></img>
-                {label}
-            </button>
-        </div>
+        <Button type={type} colorScheme='red' size='lg'>
+        {label}
+        </Button>
     )
 }
 

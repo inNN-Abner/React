@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
+import Navbar from '../../components/navbar'
 
 function Home(){
     return (
         <>
+        <Navbar />
         <h1>Menu</h1>
         <hr />
         <p>Páginas para nevagação</p>
