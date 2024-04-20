@@ -1,4 +1,4 @@
-import './ButtonForm.css'
+import { Button } from '@chakra-ui/react'
 
 interface ButtonProps {
     type: 'button' | 'submit' | 'reset'
@@ -7,7 +7,9 @@ interface ButtonProps {
 
 function ButtonForm({label, type}: ButtonProps) {
     return (
-        <button className='button-form' type={type}> {label}</button>
+        <Button type={type} colorScheme='red' size='lg'>
+        {label}
+        </Button>
     )
 }
 

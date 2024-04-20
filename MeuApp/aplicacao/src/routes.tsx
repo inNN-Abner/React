@@ -2,7 +2,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Home from './pages/home'
 import About from './pages/about'
-import Form from './pages/components/form'
+import Form from './pages/form'
 import Presentation from './pages/presentation'
 import Tasks from './pages/tasks'
 import NotFound from './pages/404'
