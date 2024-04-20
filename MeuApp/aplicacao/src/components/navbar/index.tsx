@@ -17,6 +17,7 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  Text,
 } from '@chakra-ui/react';
 
 import { GiHamburger } from "react-icons/gi";
@@ -93,10 +94,10 @@ export default function Navbar() {
               </MenuButton>
               
               <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
+                <Text marginLeft='5' marginBottom='2'><strong>Bruce Wayne</strong></Text>
+                <Text marginLeft='5'>Battinson@email.com</Text>
                 <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
+                <MenuItem marginLeft='2'>Link</MenuItem>
               </MenuList>
             </Menu>
           </Flex>
