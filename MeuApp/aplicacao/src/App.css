@@ -1,7 +1,49 @@
-body, #root, .grid{
+body, #root, .grid {
   min-height: 100vh;
 }
 
 #footer_alignment{
   color: black;
 }
+
+.task{
+  background-color: rgb(230, 230, 230);
+  margin-top: 8px;
+  border-radius: 5px;
+}
+
+.button-color{
+  background-color: rgb(66, 165, 245);
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.sub-title{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#task-layouts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task_layout {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 25px;
+}
+
+.task_align{
+  display: inline-flex;
+  margin-right: 10px;
+}
+
+.distance{
+  margin-right: 10px;
+}
+
