@@ -21,9 +21,14 @@ import { GiHamburger } from "react-icons/gi";
 import { FaHamburger } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 
-const Links = ['Sobre mim', 'Formulário', 'Apresentação', 'Tarefas do projeto'];
+const Links = [
+  { label: 'Sobre mim', href: './about' },
+  { label: 'Formulário', href: './components' },
+  { label: 'Apresentação', href: './presentation' },
+  { label: 'Tarefas do projeto', href: './tasks' }
+];
 
-const NavLink = ({ children }: { children: ReactNode }) => (
+const NavLink = ({ children, href }: { children: ReactNode, href: string }) => (
   <Link
     px={2}
     py={1}
@@ -32,12 +37,12 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={'#'}>
+    href={href}>
     {children}
   </Link>
 );
 
-export default function Simple() {
+export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -60,7 +65,7 @@ export default function Simple() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
               ))}
             </HStack>
           </HStack>
@@ -94,7 +99,7 @@ export default function Simple() {
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
               ))}
             </Stack>
           </Box>
