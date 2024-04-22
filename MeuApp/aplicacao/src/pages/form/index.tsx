@@ -1,23 +1,13 @@
-import { Link } from 'react-router-dom'
-import ButtonForm from '../../components/button-form'
-import InputForm from '../../components/input-form'
+import FormLayout from '../../components/form-layout'
+import Layout from '../../components/layout'
 
 function Form() {
     return (
-    <>
-    <h1> Entre em contato </h1>
-    <hr/>
-    <InputForm type='text' placeholder='Seu nome aqui' defaultValue=''/>
-    <p/>
-    <InputForm type='email' placeholder='Seu email aqui' defaultValue=''/>
-    <p/>
-    <InputForm type='text' placeholder='Seu telefone aqui' defaultValue=''/>
-    <hr/>
-    <ButtonForm type='button' label='E N V I A R'/>  
-
-    <hr />
-    <Link to = '/'>Ir para o Menu</Link>
-    </>
+    <div>
+    <Layout>
+        <FormLayout />
+    </Layout>
+    </div>
     )
 }
 

@@ -1,13 +1,15 @@
 import { ReactNode } from 'react';
+import { Link } from 'react-router-dom'
+
 import {
   Box,
   Flex,
   Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
   Menu,
+  Link as ChakraLink,
   MenuButton,
   MenuList,
   MenuItem,
@@ -15,16 +17,23 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  Text,
 } from '@chakra-ui/react';
 
 import { GiHamburger } from "react-icons/gi";
 import { FaHamburger } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
+import { Tooltip } from '@chakra-ui/react';
 
-const Links = ['Sobre mim', 'Formulário', 'Apresentação', 'Tarefas do projeto'];
+const Links = [
+  { label: 'Sobre mim', href: './about' },
+  { label: 'Formulário', href: './components' },
+  { label: 'Apresentação', href: './presentation' },
+  { label: 'Tarefas do projeto', href: './tasks' },
+];
 
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
+const NavLink = ({ children, href }: { children: ReactNode, href: string }) => (
+  <ChakraLink
     px={2}
     py={1}
     rounded={'md'}
@@ -32,12 +41,12 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={'#'}>
+    href={href}>
     {children}
-  </Link>
+  </ChakraLink>
 );
 
-export default function Simple() {
+export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -52,15 +61,19 @@ export default function Simple() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={5} alignItems={'center'}>
-            <Box> 
+            <Box>
+              <Tooltip label="Menu" aria-label='A tooltip'>
+              <ChakraLink as={Link} to='.././'> 
               <FaReact size={30} />
+              </ChakraLink>
+              </Tooltip>
             </Box>
             <HStack
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
               ))}
             </HStack>
           </HStack>
@@ -81,10 +94,10 @@ export default function Simple() {
               </MenuButton>
               
               <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
+                <Text marginLeft='5' marginBottom='2'><strong>Bruce Wayne</strong></Text>
+                <Text marginLeft='5'>Battinson@email.com</Text>
                 <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
+                <MenuItem marginLeft='2'>Link</MenuItem>
               </MenuList>
             </Menu>
           </Flex>
@@ -94,7 +107,7 @@ export default function Simple() {
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
               ))}
             </Stack>
           </Box>
