@@ -1,5 +1,6 @@
 body, #root, .grid {
   min-height: 100vh;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #footer_alignment{
@@ -14,6 +15,11 @@ body, #root, .grid {
 
 .button-color{
   background-color: rgb(66, 165, 245);
+}
+
+.text-formatting{
+  margin: 10px 5px 5px 10px;
+  text-align: left;
 }
 
 .title {
