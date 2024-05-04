@@ -13,8 +13,12 @@ body, #root, .grid {
   border-radius: 5px;
 }
 
-.button-color{
+.button-blue{
   background-color: rgb(66, 165, 245);
+}
+
+.button-red{
+  background-color: rgb(119, 5, 30);
 }
 
 .text-formatting{
@@ -52,4 +56,3 @@ body, #root, .grid {
 .distance{
   margin-right: 10px;
 }
-
